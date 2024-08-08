@@ -129,7 +129,7 @@ class SPARQLConnector(Connector):
             The response of the query in a JSON format.
 
         """
-        url = f"{self.endpoint}/query?query={parse.quote(query)}"
+        url = f"{self.endpoint}?query={parse.quote(query)}"
         with requests.get(url, headers=self._headers) as res:
             return res.json()
 
